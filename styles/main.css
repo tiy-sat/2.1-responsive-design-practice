@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* changes default font size to measure
+     .1rem == 1px */
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.article {
+  /* Stopped child floats from affected content around
+     Needs to be on the nearest parent container
+  */
+  /*clear: both;*/
+  margin-bottom: 5rem;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  /* move down 40px */
+  margin-top: 4rem;
+}
+
+/* Everything below here changes at 480px and above */
+@media only screen
+  /* `min-device-width` changes only on physical devices
+    that match the width constraint
+  */
+  /* `min-width` will affect any browser that matches this
+     constraint ***** use this *****
+  */
+  and (min-width: 480px) {
+
+    .grid__row {
+      font-size: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .grid__col--third {
+      display: inline-block;
+      width: 33.333%;
+      font-size: 1.4rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .article {
+      border: 2px solid rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .article__title {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      /* padding: TOP RIGHT BOTTOM LEFT */
+      padding-top: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      z-index: 1;
+    }
+
+    .article img {
+      opacity: 0.5;
+    }
+
+    .article__text{
+      text-align: justify;
+    }
+
+    .article__link {
+      text-align: center;
+      display: block;
+    }
+}
